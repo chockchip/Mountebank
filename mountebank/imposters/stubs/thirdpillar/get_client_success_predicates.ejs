@@ -1,0 +1,15 @@
+{
+    "and":[{
+     "equals":{
+      "path":"/thirdpillar/client",
+      "method":"POST"
+     }
+    },{
+     "matches":{
+      "body":{
+       "cardIdentification":"^XY.*",
+       "requestTransactionId":"^.*"
+      }
+     }
+    }]
+}

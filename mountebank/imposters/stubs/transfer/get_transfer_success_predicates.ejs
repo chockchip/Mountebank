@@ -1,0 +1,15 @@
+{
+    "and":[{
+     "equals":{
+      "path":"/transfer",
+      "method":"POST"
+     }
+    },{
+     "matches":{
+      "body":{
+       "cardIdentification":"^TF.*",
+       "requestTransactionId":"^.*"
+      }
+     }
+    }]
+}
