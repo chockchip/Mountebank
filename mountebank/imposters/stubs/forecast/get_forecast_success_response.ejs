@@ -1,0 +1,25 @@
+{
+    "is": {
+            "statusCode": 200,
+            "headers": {
+                "Content-Type": "application/json"
+            },
+            "body": {
+                "iban":"${iban}",
+                "amount": 230
+            }    
+        },
+        "behaviors": [
+            {
+                "copy": {
+                    "from": {"query":"iban"},
+                    "into": "${iban}",
+                    "using": {
+                        "method": "regex",
+                        "selector": "^BNDA",
+                        "options": { "ignoreCase": true }
+                    }
+                }
+            }
+        ]
+}

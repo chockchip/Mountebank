@@ -5,9 +5,22 @@
      "Content-Type": "application/json"
     },
      "body": {
-      "clientid":"100001",
+      "clientid":"${clientid}",
       "firstname":"test_client",
       "client_type":"primary"
      }
-    }
+    },
+    "behaviors": [
+        {
+            "copy": {
+                    "from": "body",
+                    "into": "${clientid}",
+                    "using": {
+                      "method": "regex",
+                      "selector": "10[0-9]{4}",
+                      "options": { "ignoreCase": true, "multiline":true }
+                }
+            }
+        }
+    ]
 }

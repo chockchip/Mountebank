@@ -9,4 +9,5 @@ services:
     - 2525:2525
     - 6969:6969
     - 6970:6970
+    - 6971:6971
     command: --configfile /mountebank/init_imposters.ejs --allowInjection
